@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-<!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -124,12 +124,12 @@ button:hover {
 			<table style="border-radius: 10px">
 				<tr>
 					<td id="show"
-						style="min-width: 850px; color: green; background-color: white">Notice Status Control</td>
+						style="min-width: 750px; color: green; background-color: white">Notice Status Control</td>
 				</tr>
 			</table>
 
 
-			<table style="background-color: white">
+			<table style="background-color: white; min-width: 750px;">
 				<tr
 					style="color: white; font-size: 22px; font-weight: bold; background-color: #660033">
 					<td>Notice Id</td>

@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-<!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,7 @@ button:hover {
 	text-align: center;
 	background-color: cyan;
 	margin: 10px;
-	margin-left:25px;
+	margin-left:20px;
 	color: black;
 	font-style: normal;
 	font-size: 15.5px;
@@ -149,6 +149,8 @@ button:hover {
 					isPending = false;
 
 					String status = bidder.getBidStatus();
+					Timestamp tdeadline = bidder.getBidDeadline();
+					int tprice = bidder.getBaseprice();
 
 					if (status.equalsIgnoreCase("AdminAccepted"))
 						isPending = true;
@@ -163,16 +165,17 @@ button:hover {
 					<td><%=bidder.getBidId()%></td>
 					<td><%=bidder.getVendorId()%></td>
 					<td><%=bidder.getBidAmount()%></td>
-					<td><%=bidder.getBidDeadline()%></td>
+					<td><%=tdeadline%></td>
 					<td><%=bidder.getBidStatus()%></td>
 					<td><%=bidder.getPoints() %>
 
 					<%
+					
 					if (isPending) {
 					%>
 
 					<td><a
-						href="accAcceptBidSrv?bid=<%=bidder.getBidId()%>&tid=<%=bidder.getTenderId()%>&vid=<%=bidder.getVendorId()%>"><button
+						href="accAcceptBidSrv?bid=<%=bidder.getBidId()%>&tid=<%=bidder.getTenderId()%>&vid=<%=bidder.getVendorId()%>&amount=<%= String.format("%.0f", (1/100.0) * tprice) %>"><button
 								class="btn btn-success">Accept</button></a></td>
 					
 					<%

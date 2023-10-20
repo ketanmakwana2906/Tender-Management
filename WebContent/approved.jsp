@@ -16,7 +16,7 @@
 		<h4
 			style="background-color: #26b0b0; margin-top: -1.8px; padding: 5px;">
 			<i class="glyphicon glyphicon-volume-up"></i> &nbsp; Recently
-			Approved Tenders
+			Published Tenders
 		</h4>
 		<div class="marquee-content"
 			style="padding: 10px; font-weight: bold; font-size: 1.1em">
@@ -26,20 +26,20 @@
 
 				<%
 				try {
-					PreparedStatement ps = con.prepareStatement("select * from tenderstatus order by sysdate() asc limit 0");
+					PreparedStatement ps = con.prepareStatement("SELECT * FROM tender ORDER BY tid DESC LIMIT 6");
 					ResultSet rs = ps.executeQuery();
 
 					while (rs.next()) {
-						String bid = rs.getString("bid");
 						String tid = rs.getString("tid");
+						String tname = rs.getString("tname");
 				%>
 				<hr>
 				<p style="color: red;">
-					Application
+					Tender
 					Id:&nbsp;
-					<%=bid%></p>
+					<%=tid%></p>
 				<p style="color: black">
-					Assigned To: &nbsp;&nbsp;<%=tid%></p>
+					Name: &nbsp;&nbsp;<%=tname%></p>
 
 				<%
 				}

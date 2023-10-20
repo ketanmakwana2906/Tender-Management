@@ -4,8 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
-    <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,7 +66,7 @@
     <div class="marquee" style="border:2px black hidden; background-color:white">
         <h4 style="background-color:black; margin-top:-1.8px; margin-bottom:1px;padding: 5px; text-align: center;color:red;font-weight:bold">
         &nbsp; <span id="pagetitle">Admin Account</span></h4><!-- pagetitle id is given here -->
-        <div class="marquee-content" style="align:center; padding-top:200px;min-height:750px;background-color:cyan">
+        <div class="marquee-content" style="align:center; padding-top:200px;min-height:725px;background-color:cyan">
      		<h1><center>Hey Admin! Welcome to Our Tender Management system</center></h1>
      		<h2><center>Here You can manage your vendors, add tenders and assign it to vendors according to their high bids</center></h2>
      		<h3><center>Go on the about menu section links to explore the site</center></h3>

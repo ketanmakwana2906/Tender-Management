@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,12 +21,15 @@
     <link rel="stylesheet" href="css/style2.css">
   </head>
 <body>
-       <nav class="navbar navbar-inverse" > <!-- Navigation Bar-->
+       <nav class="navbar navbar-inverse"   > <!-- Navigation Bar-->
         <div class="container" >
             <div class="navbar-header"> <!-- Header navigation-->
                 <a href="#" class="pull-left">
+                    <img src="images/Banner_Hit.png" alt="tender management" width="70px" height="70px"/>
                 </a>
-                    <a class="navbar-brand" href="#"><h1>Tender4U</h1></a> <!-- Library Name fixed-->
+                    <a class="navbar-brand" href="#"><h1>Tender4u</h1></a> <!-- Library Name fixed-->
+                                       <a href="#"><p>&nbsp;online tendering system</p></a>
+                   
             </div>
          
             <ul class="nav navbar-nav navbar-right menusize pull-right">   <!-- Login or signup in right top corner-->

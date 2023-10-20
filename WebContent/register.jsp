@@ -12,7 +12,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

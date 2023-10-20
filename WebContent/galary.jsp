@@ -28,7 +28,7 @@
         &nbsp; <span id="pagetitle">Galary</span></h4><!-- pagetitle id is given here -->
       <div class="marquee-content" style="padding:1px;padding-top:0px; font-weight: bold; font-size: 1.1em">
       <!-- height="900" -->   
-      <marquee scrollamount=0 style="min-height:750px">
+      <marquee scrollamount=0 style="min-height:740px">
             <!--Attatching the photo to be slided in the home page-->
             <div class="slider">
               <div id="myCarousel" class="carousel slide" data-ride="carousel">

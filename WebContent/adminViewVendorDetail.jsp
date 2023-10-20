@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
 
 	<!-- Including the header of the page  -->
 	
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="AdminHeader.jsp"></jsp:include>
 	
 	<jsp:include page="adminMenu.jsp"></jsp:include>
 	
@@ -86,7 +86,7 @@
            %> 
 	
 
-		<table style="background-color:white;margin-left:35%">
+		<table style="background-color:white;margin-left:20%;width:632px;">
 			<th colspan="2">Vendor Contact Details</th>
 			<tr><td>	Vendor Name  : </td><td><%=vendor.getName()  %></td></tr>
 			<tr><td>    Mobile No  : </td><td><%=vendor.getMobile()  %></td></tr>

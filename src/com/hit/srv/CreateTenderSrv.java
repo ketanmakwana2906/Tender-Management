@@ -67,6 +67,7 @@ public class CreateTenderSrv extends HttpServlet {
 			Date originalDate = originalDateFormat.parse(stdeadline);
 			SimpleDateFormat newDateFormat = new SimpleDateFormat(newDateFormatPattern);
             String newDateString = newDateFormat.format(originalDate);
+            System.out.print(newDateString);
             String tloc= request.getParameter("tloc").trim();
     		int tprice=Integer.parseInt(stprice);
     		int bexperience=Integer.parseInt(stbexp);

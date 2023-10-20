@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,12 +65,12 @@
 		text-align:center;
 		background-color: cyan;
 		margin:10px;
-		margin-left:40px;
+		margin-left:20px;
 		color:black;
 		font-style:normal;
 		font-size: 15.5px;
 		padding:12px;
-		width:100%;
+		width:1000px;
 		
     
     }
@@ -141,7 +141,7 @@
      		 
      		 
      		 
-     <table style="background-color:white;">		
+     <table style="background-color:white; width:1000px;">		
      		<tr style="color:white; font-size:22px; font-weight:bold;background-color:#660033">
      		 <td>Vendor Id</td> <td>Vendor Name </td> <td> Mobile </td> <td>Email</td> <td>Company</td> <td>Address</td></tr>
      		<%

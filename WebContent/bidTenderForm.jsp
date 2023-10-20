@@ -7,7 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,7 +90,8 @@
 		VendorDao daov = new VendorDaoImpl();
 		
 		TenderBean tender = dao.getTenderDataById(tenderId);
-		
+		Timestamp tdeadline = tender.getDeadline();
+
 		VendorBean vendor = daov.getVendorDataById(vendorId);
 	
 	%>
@@ -102,7 +103,7 @@
 		
 		   <tr><td style="color:red">Tendor Name: </td><td> <input readonly type="text" name="tendername" required="required" value="<%=tender.getName()%>"></td></tr>
 		   <tr><td style="color:red"> Tender Type: </td><td> <input readonly type="text" name="tendertype" required="required" value="<%=tender.getType()%>"></td></tr>
-		   <tr><td style="color:red"> Deadline Reqd: </td><td> <input readonly type="datetime" name="" required="required" value="<%=tender.getDeadline()%>"></td></tr>
+		   <tr><td style="color:red"> Deadline Reqd: </td><td> <input readonly type="text" name="" required="required" value="<%=tdeadline%>"></td></tr>
 		   
 <tr><td style="color:red"> Base Price : </td><td> <input readonly type="number" name="tenderamount" required="required" value="<%=tender.getPrice()%>"></td></tr>
 		   <tr><td style="color:red"> Location : </td><td> <input readonly type="text" name="tenderlocation" required="required" value="<%=tender.getLocation()%>"></td></tr>

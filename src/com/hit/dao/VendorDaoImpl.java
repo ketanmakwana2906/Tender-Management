@@ -95,7 +95,7 @@ public class VendorDaoImpl  implements VendorDao{
 		ResultSet rs = null;
 		
 		try {
-			ps = con.prepareStatement("SELECT * FROM vendor WHERE vid <> 'VADMIN0000000000';");
+			ps = con.prepareStatement("SELECT * FROM vendor WHERE vid NOT IN ('VADMIN0000000000', 'VACCOUNATNT00000');");
 			rs = ps.executeQuery();
 			
 			while(rs.next()){

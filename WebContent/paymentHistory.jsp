@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-<!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,12 +65,12 @@ button:hover {
 	text-align: center;
 	background-color: cyan;
 	margin: 10px;
-	margin-left:25px;
+	margin-left:20px;
 	color: black;
 	font-style: normal;
 	font-size: 15.5px;
 	padding: 12px;
-	width: 127%;
+	width: 124%;
 }
 </style>
 </head>
@@ -132,7 +132,7 @@ button:hover {
 					<td>Order Id</td>
 					<td>Created At</td>
 					<td>Vendor Id</td>
-					<td>Bidder Id</td>
+					<td>Bid Id</td>
 					<td>Tender Id</td>
 					<td>Amount</td>
 					<td>Payment Id</td>
@@ -142,7 +142,7 @@ button:hover {
 				BidderDao dao = new BidderDaoImpl();
 
 				List<PaymentBean> paymentList = dao.getAllBidPaymentHistory();
-				boolean isPending = false;
+			
 				for (PaymentBean payment : paymentList) {
 
 				
@@ -181,18 +181,7 @@ button:hover {
 		</div>
 
 	</div>
-	<!-- End of container-fluid-->
 
-
-	<!-- <div class="container" style="height:300px">
-	ucomment this if you want to add some space in the lower part of page
-	</div> -->
-
-
-
-	<!-- Now from here the footer section starts-->
-
-	<!-- Including the footer of the page -->
 
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

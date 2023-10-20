@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-<!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -123,6 +123,8 @@
 				List<BidderBean> bidderList = dao.getAllBidsOfaVendor(vendor.getId());
 
 				for (BidderBean bidder : bidderList) {
+					Timestamp tdeadline = bidder.getBidDeadline();
+
 				%>
 
 
@@ -130,7 +132,7 @@
 					<td><%=bidder.getBidId()%></td>
 					<td><%=bidder.getTenderId()%></td>
 					<td>&#8377; <%=bidder.getBidAmount()%></td>
-					<td><%=bidder.getBidDeadline()%></td>
+					<td><%=tdeadline%></td>
 					<td style="font-weight:bold;"><%=bidder.getBidStatus()%></td>
 				</tr>
 

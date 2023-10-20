@@ -16,8 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.hit.beans.VendorBean;
+import com.hit.beans.*;
 import com.hit.utility.DBUtil;
+import com.hit.dao.*;
+
 
 /**
  * Servlet implementation class LoginSrv
@@ -55,7 +57,10 @@ public class LoginSrv extends HttpServlet {
 			//Admin login check
 			if(uname.equals("admin-krd@gmail.com") && pword.equals("Admin@2003")){
 				//login successful
+				userDaoImpl user1 = new userDaoImpl();
+		        UserBean u = user1.readUser(uname, pword);
 				HttpSession session = request.getSession();
+	            session.setAttribute("current_user", u);
 				session.setAttribute("user","admin");
 				session.setAttribute("username", uname);
 				session.setAttribute("password", pword);
@@ -74,9 +79,12 @@ public class LoginSrv extends HttpServlet {
 		// Check if the user wants to login as an accountant
 		else if (user.toLowerCase().equals("login as accountant")) {
 		    // Accountant Login Check
-		    if (uname.equals("Accountant") && pword.equals("Accountant")) {
+		    if (uname.equals("accountant-tender@gmail.com") && pword.equals("Accountant")) {
 		        // Login successful as accountant
+		    	userDaoImpl user1 = new userDaoImpl();
+		        UserBean u = user1.readUser(uname, pword);
 		        HttpSession session = request.getSession();
+	            session.setAttribute("current_user", u);
 		        session.setAttribute("user", "accountant");
 		        session.setAttribute("username", uname);
 		        session.setAttribute("password", pword);
@@ -104,8 +112,10 @@ public class LoginSrv extends HttpServlet {
 				pst.setString(2, pword);
 				rs=pst.executeQuery();
 				if(rs.next()){ //Vendor Login Successful
-					
+					userDaoImpl user1 = new userDaoImpl();
+			        UserBean u = user1.readUser(uname, pword);
 					HttpSession session = request.getSession();
+		            session.setAttribute("current_user", u);
 					session.setAttribute("user","user");
 					session.setAttribute("username", uname);
 					session.setAttribute("password", pword);
@@ -140,7 +150,10 @@ public class LoginSrv extends HttpServlet {
 					rs1=ps.executeQuery();
 					if(rs1.next()){
 						
+						userDaoImpl user1 = new userDaoImpl();
+				        UserBean u = user1.readUser(uname, pword);
 						HttpSession session = request.getSession();
+			            session.setAttribute("current_user", u);
 						session.setAttribute("user","user");
 						session.setAttribute("username", uname);
 						session.setAttribute("password", pword);

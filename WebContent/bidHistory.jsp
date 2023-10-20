@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-<!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -181,6 +181,8 @@ button:hover {
 
 					String status = bidder.getBidStatus();
 					int tprice = bidder.getBaseprice();
+					Timestamp tdeadline = bidder.getBidDeadline();
+
 
 					if (status.equalsIgnoreCase("paymentpending"))
 						isPending = true;
@@ -191,7 +193,7 @@ button:hover {
 					<td><%=bidder.getTenderId()%></td>
 					<td>&#8377; <%=tprice%> </td>
 					<td>&#8377; <%=bidder.getBidAmount()%></td>
-					<td><%=bidder.getBidDeadline()%></td>
+					<td><%=tdeadline%></td>
 					<td style="font-weight:bold;"><%=bidder.getBidStatus()%></td>
 
 					<%

@@ -33,7 +33,6 @@
                 <ul class="dropdown-menu">
                   <li><a href="viewTender.jsp">View all Tenders</a></li>
                   <li><a href="createTender.jsp">Create New Tender</a></li>
-                  <li><a href="viewTenderBids.jsp">View Tender Bids</a></li>
                   <li><a href="viewTenderBids.jsp">Accept a bid</a></li>
                   <li><a href="viewAssignedTenders.jsp">View Assigned Tenders</a></li>
                   </ul>

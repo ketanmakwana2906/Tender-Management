@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,7 +74,7 @@
 
      	<table style="border-radius:10px" >
 			<tr >
-				<td id="show" style="min-width:632px;min-height:0px;color:blue">Edit Details And Click on Update</td>
+				<td id="show" style="min-width:655px;min-height:0px;color:blue">Edit Details And Click on Update</td>
 			</tr>
 		</table>
             

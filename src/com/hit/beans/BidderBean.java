@@ -1,6 +1,7 @@
 package com.hit.beans;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,7 +17,7 @@ public class BidderBean implements Serializable {
 	private String tenderId;
 	private int basePrice;
 	private int bidAmount;
-	private Date bidDeadline;
+	private Timestamp bidDeadline;
 	private String bidStatus ;
 	private int points;
 	private String licence ;
@@ -45,17 +46,15 @@ public class BidderBean implements Serializable {
 	public void setBidAmount(int bidAmount) {
 		this.bidAmount = bidAmount;
 	}
-	public Date getBidDeadline() {
+	public Timestamp getBidDeadline() {
 		return bidDeadline;
 	}
 	
-	public void setBidDeadline(java.sql.Date bidDeadline){
+	public void setBidDeadline(Timestamp bidDeadline){
 		
-		this.bidDeadline = new java.util.Date(bidDeadline.getTime());
-	}
-	/*public void setBidDeadline(Date bidDeadline) {
 		this.bidDeadline = bidDeadline;
-	}*/
+	}
+	
 	public String getBidStatus() {
 		return bidStatus;
 	}
@@ -84,8 +83,7 @@ public class BidderBean implements Serializable {
 		this.basePrice = baseprice;
 	}
 	
-	public BidderBean(String bidId, String vendorId, String tenderId,String basePrice,
-			String bidAmount, String bidDeadline, String bidStatus,int points,String licence) {
+	public BidderBean(String bidId, String vendorId, String tenderId,String basePrice, String bidAmount, String strbidDeadline, String bidStatus,int points,String licence) {
 		//TODO
 		super();
 		this.bidId = bidId;
@@ -95,21 +93,17 @@ public class BidderBean implements Serializable {
 		this.points = points;
 		this.bidAmount = Integer.parseInt(bidAmount);
 		this.licence = licence;
-		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Timestamp bidDeadline = null;
 
+        try {
+            Date date = sdf.parse(strbidDeadline);
+            bidDeadline = new Timestamp(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-	
-		SimpleDateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
-                Locale.ENGLISH);
-		java.util.Date udate = new java.util.Date();
-		
-		try {
-			
-			udate = sdf.parse(bidDeadline);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		this.bidDeadline = udate;
+        this.bidDeadline = bidDeadline;
 		this.bidStatus = bidStatus;
 	}
 	

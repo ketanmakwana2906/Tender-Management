@@ -257,8 +257,8 @@ public class BidderDaoImpl implements BidderDao{
 	        cs.setString(3, tenderId);
 	        cs.setInt(4, Integer.parseInt(basePrice));
 	        cs.setInt(5, Integer.parseInt(bidAmount));
-	        java.sql.Date bidDate = new java.sql.Date(bidder.getBidDeadline().getTime());	        
-	        cs.setDate(6, bidDate);
+	    	Timestamp deadline = bidder.getBidDeadline();
+			cs.setTimestamp(6, deadline);
 	        cs.setString(7, bidStatus);
 	        cs.setInt(8, points);
 	        cs.setString(9, licence);
@@ -301,7 +301,8 @@ public class BidderDaoImpl implements BidderDao{
 				BidderBean bidder = new BidderBean();
 				
 				bidder.setBidAmount(rs.getInt("bidamount"));
-				bidder.setBidDeadline(new java.sql.Date(rs.getDate("deadline").getTime()));
+				Timestamp sqlDate = rs.getTimestamp("deadline");
+				bidder.setBidDeadline(sqlDate);
 				bidder.setBidId(rs.getString("bid"));
 				bidder.setBidStatus(rs.getString("status"));
 				bidder.setTenderId(rs.getString("tid"));
@@ -353,8 +354,8 @@ public class BidderDaoImpl implements BidderDao{
 				BidderBean bidder = new BidderBean();
 				
 				bidder.setBidAmount(rs.getInt("bidamount"));
-				bidder.setBidDeadline(new java.sql.Date(rs.getDate("deadline").getTime()));
-				bidder.setBidId(rs.getString("bid"));
+				Timestamp sqlDate = rs.getTimestamp("deadline");
+				bidder.setBidDeadline(sqlDate);				bidder.setBidId(rs.getString("bid"));
 				bidder.setBaseprice(rs.getInt("basePrice"));
 				bidder.setBidStatus(rs.getString("status"));
 				bidder.setTenderId(rs.getString("tid"));
@@ -458,8 +459,8 @@ List<BidderBean> bidderList = new ArrayList<BidderBean>();
 				BidderBean bidder = new BidderBean();
 				
 				bidder.setBidAmount(rs.getInt("bidamount"));
-				bidder.setBidDeadline(new java.sql.Date(rs.getDate("deadline").getTime()));
-				bidder.setBidId(rs.getString("bid"));
+				Timestamp sqlDate = rs.getTimestamp("deadline");
+				bidder.setBidDeadline(sqlDate);				bidder.setBidId(rs.getString("bid"));
 				bidder.setBaseprice(rs.getInt("basePrice"));
 				bidder.setBidStatus(rs.getString("status"));
 				bidder.setTenderId(rs.getString("tid"));

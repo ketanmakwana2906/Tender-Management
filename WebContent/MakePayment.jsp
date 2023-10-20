@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,9 +95,7 @@
     </div> <!-- End of container-fluid-->
 	
 	
-	<!-- <div class="container" style="height:300px">
-	ucomment this if you want to add some space in the lower part of page
-	</div> -->
+
 
 
 
@@ -126,9 +124,8 @@
                 var servletUrl = "AssignBidSrv?bid=" + bidderId + "&vid=" + vendorId + "&tid=" + tenderId + "&pid=" + response.razorpay_payment_id + "&amount=" + amount;
 
                 
-                window.location.href = servletUrl; // Replace "servletUrl" with the actual URL
+                window.location.href = servletUrl; 
 
-                // You can perform further actions here, e.g., update order status in your database.
             },
             prefill: {
             	name: "vendor",

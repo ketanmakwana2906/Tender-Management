@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,7 +96,7 @@
 					<p><a href="forgotpassword.jsp">forgot password? click here</a></p>
 					<input type="submit" value="Login As Vendor" name="user">&nbsp; &nbsp; &nbsp; &nbsp;
 					<input type="submit" value="Login As Admin" name="user"><br/><br/>
-					<input type="submit" value="login as accountant" name="user"><br/><br/>
+					<input type="submit" value="Login As Accountant" name="user"><br/><br/>
 					
 				</form>
 			</td>

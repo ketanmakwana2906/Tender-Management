@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/style2.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  
   </head>
 <body>
 
@@ -72,8 +73,11 @@
         &nbsp; <span id="pagetitle">PAYMENT SECTION</span></h4><!-- pagetitle id is given here -->
         <div class="marquee-content" style="align:center; padding-top:100px; padding-left:200px;min-height:750px;background-color:cyan">
      	
-        <center> <strong><h1>Payment Successfull!! (bid order placed)</h1></strong></center>
-        <div id="receipt-content">
+     	
+     	
+       <strong><h1>Payment Successfull!! (bid order placed)</h1></strong>
+               <div id="receipt-content">
+        
                     <h3>Your Payment details</h3>
                     <p>Payment ID : <strong><%= request.getParameter("pid") %></strong></p>
                     <p>Bid ID : <strong><%= request.getParameter("bid") %></strong></p>
@@ -83,9 +87,9 @@
                     <p>Order ID : <strong> <%= session.getAttribute("orderId") %></strong></p>
                 </div>
                 <strong>  <p>tender successfully assigned to you,</p><p> now our admin will contact you through your email id for further process</p> </strong>
-                <center><button onclick="printReceipt()">Print Receipt</button></center>
+              <button onclick="printReceipt()">Print Receipt</button>
                 <br>
-       <center><button><a href="bidHistory.jsp">back to bid history</a></button></center>
+       <button><a href="bidHistory.jsp">back to bid history</a></button>
       </div>
      </div>
      </div>
@@ -120,8 +124,17 @@ function printReceipt() {
             throw new Error('Failed to open a new window for printing.');
         }
         newWindow.document.open();
-        newWindow.document.write('<html><head><title>Payment Receipt</title></head><body>');
-        newWindow.document.write('<h1>Payment Receipt</h1>');
+        newWindow.document.open();
+        newWindow.document.write('<html><head><title>Payment Receipt</title>');
+        newWindow.document.write('<style>');
+        newWindow.document.write('.logo-container { display: flex; align-items: center; }');
+        newWindow.document.write('.logo-container img { margin-right: 10px; width: 60px; height: 60px; }');
+        newWindow.document.write('</style>');
+        newWindow.document.write('</head><body>');
+        newWindow.document.write('<div class="logo-container">');
+        newWindow.document.write('<img src="images/Banner_Hit.png" alt="Tender4u Logo">');
+        newWindow.document.write('<h1>Tender4u - Online Tendering Site</h1>');
+        newWindow.document.write('</div>');
         newWindow.document.write('<div>' + receiptContent + '</div>');
         newWindow.document.write('</body></html>');
         newWindow.document.close();

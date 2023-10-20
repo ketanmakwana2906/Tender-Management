@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-<!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +76,7 @@ button:hover {
 	text-align: center;
 	background-color: cyan;
 	margin: 10px;
-	margin-left:30px;
+	margin-left:20px;
 	color: black;
 	font-style: normal;
 	font-size: 15.5px;
@@ -149,7 +149,7 @@ button:hover {
 
 
 
-			<table style="background-color: white">
+			<table style="background-color: white; width:110%;">
 				<tr
 					style="color: white; font-size: 18px; font-weight: bold; background-color: #660033">
 					<td>Bidder Id</td>
@@ -172,6 +172,7 @@ button:hover {
 					isPending = false;
 
 					String status = bidder.getBidStatus();
+					Timestamp tdeadline = bidder.getBidDeadline();
 
 					if (status.equalsIgnoreCase("pending"))
 						isPending = true;
@@ -182,10 +183,14 @@ button:hover {
 					<td><%=bidder.getBidId()%></td>
 					<td><a
 						href="adminViewVendorDetail.jsp?vid=<%=bidder.getVendorId()%>"><%=bidder.getVendorId()%></a></td>
-			        <td><a
-						href="licence_docs/<%=bidder.getLicence()%>" target="blank"><button class="btn btn-primary">View</button></a></td>
+			       <td>
+    <a href="licence_docs/<%=bidder.getLicence()%>" target="_blank">
+        <button class="btn btn-primary">View</button>
+    </a>
+</td>
+
 					<td><%=bidder.getBidAmount()%></td>
-					<td><%=bidder.getBidDeadline()%></td>
+					<td><%=tdeadline%></td>
 					<td><%=bidder.getBidStatus()%></td>
 					<td><%=bidder.getPoints() %>
 

@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <link rel="shortcut icon" type="image/png" href="images/Banner_Hit.png">
-    <!--link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico"-->
+   <link rel="shortcut icon" type="image/ico" href="images/hit_fevicon.ico">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,9 +100,9 @@
           
    <div class="col-md-8">
     
-     <table style="border-radius:10px" >
+     <table style="border-radius:10px; margin-left:5%;" >
 			<tr >
-				<td id="show" style="min-width:850px;background-color:white;min-height:0px;color:red">All Assigned Tenders List</td>
+				<td id="show" style="min-width:725px;background-color:white;min-height:0px;color:red;">All Assigned Tenders List</td>
 			</tr>
 	</table>
     

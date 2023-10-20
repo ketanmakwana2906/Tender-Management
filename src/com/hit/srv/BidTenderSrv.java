@@ -24,6 +24,12 @@ import java.text.ParseException; // Import ParseException from java.text
 
 import com.hit.dao.BidderDaoImpl;
 import com.hit.utility.IDUtil;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
 
 @WebServlet("/BidTenderSrv")
 @MultipartConfig
@@ -56,6 +62,7 @@ public class BidTenderSrv extends HttpServlet {
         String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
         String fileName = "licence_" + bidId + fileExtension;        String uploadPath = "D:\\Tender-Management-System-master\\Tender-Management-System-master\\tendermanagement\\WebContent\\licence_docs";
         
+        
      // Create the directory if it doesn't exist
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
@@ -69,7 +76,7 @@ public class BidTenderSrv extends HttpServlet {
             Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
         
-        
+     
         
 
         String bidAmountStr = request.getParameter("bidamount");
@@ -77,7 +84,17 @@ public class BidTenderSrv extends HttpServlet {
         String experienceStr = request.getParameter("bidexperince"); // Get experience from the request
 
         String bidDeadlineStr = request.getParameter("biddeadline");
-       
+        String newDateFormatPattern = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat originalDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+        Date originalDate = null;
+		try {
+			originalDate = originalDateFormat.parse(bidDeadlineStr);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SimpleDateFormat newDateFormat = new SimpleDateFormat(newDateFormatPattern);
+        String newDateString = newDateFormat.format(originalDate);
       
         String licence =fileName;
         System.out.print(bidAmountStr);
@@ -133,7 +150,8 @@ public class BidTenderSrv extends HttpServlet {
 
 
             BidderDaoImpl dao = new BidderDaoImpl();
-            String status = dao.bidTender(bidId ,tenderId,basePriceStr, vendorId, bidAmountStr, bidDeadlineStr, points,licence);
+            String status = dao.bidTender(bidId ,tenderId,basePriceStr, vendorId, bidAmountStr, newDateString, points,licence);
+            System.out.print(newDateString);
 
             PrintWriter pw = response.getWriter();
             RequestDispatcher rd = request.getRequestDispatcher("bidTenderForm.jsp");
